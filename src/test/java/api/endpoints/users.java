@@ -3,6 +3,7 @@ import static io.restassured.RestAssured.*;
 
 import org.testng.ITestContext;
 
+import api.payload.register;
 import api.payload.user;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -36,5 +37,11 @@ public static Response deleteuser(ITestContext context)
 	System.out.println("Retrived id = "+deleteuserid);
 	Response rs=given().pathParam("userid", deleteuserid).when().delete(Routes.delete_user);
 	return rs;
+}
+public static Response registersuccessful(register payload)
+{
+	Response rs=given().contentType(ContentType.JSON).body(payload).when().post(Routes.login_successful);
+	return rs;
+	
 }
 }
