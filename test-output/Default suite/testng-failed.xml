@@ -6,7 +6,7 @@
       <class name="api.test.Usertest">
         <methods>
           <include name="setupdata"/>
-          <include name="deleteuser" invocation-numbers="0"/>
+          <include name="getallUsers"/>
         </methods>
       </class> <!-- api.test.Usertest -->
     </classes>
